@@ -1,0 +1,8 @@
+ua\lviv\iot\officeTools\manager\OfficeToolsManager.class
+ua\lviv\iot\officeTools\model\AbstractOfficeTool.class
+ua\lviv\iot\officeTools\model\MagnifyingGlass.class
+ua\lviv\iot\officeTools\model\Ruler.class
+ua\lviv\iot\officeTools\model\Brand.class
+ua\lviv\iot\officeTools\model\Colour.class
+ua\lviv\iot\officeTools\model\BasketForPapers.class
+ua\lviv\iot\officeTools\model\SortType.class
