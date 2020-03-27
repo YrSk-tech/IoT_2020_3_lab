@@ -12,13 +12,11 @@ import ua.lviv.iot.officeTools.model.AbstractOfficeTool;
 import ua.lviv.iot.officeTools.model.Colour;
 
 class OfficeToolsManagerTest extends BaseOfficeToolsManagerTest {
-	private OfficeToolsManager officeToolsManager;
-
 	List<AbstractOfficeTool> findRuler;
 
 	@BeforeEach
 	public void setUp() {
-		officeToolsManager = new OfficeToolsManager();
+		new OfficeToolsManager();
 		findRuler = new ArrayList<>();
 	}
 
