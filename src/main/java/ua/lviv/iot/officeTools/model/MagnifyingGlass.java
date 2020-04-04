@@ -20,6 +20,11 @@ public class MagnifyingGlass extends AbstractOfficeTool {
         return super.getHeaders() + "," + "magnificationFactor";
     }
 
+    @Override
+    public String toCSV() {
+        return super.toCSV() + "," + "magnificationFactor=" + getMagnificationFactor();
+    }
+    
     public int getMagnificationFactor() {
         return magnificationFactor;
     }

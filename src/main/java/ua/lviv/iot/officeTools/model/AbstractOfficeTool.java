@@ -9,7 +9,7 @@ public abstract class AbstractOfficeTool {
     private int weightInGrams;
     private int warrantyInDays;
     
-
+    public String headers = "producer, priceInUAH, brand, colour, weightInGrams, warrantyInDays";
     public AbstractOfficeTool(String producer, double priceInUAH, Brand brand, Colour colour, int weightInGrams,
             int warrantyInDays) {
         super();
@@ -69,7 +69,7 @@ public abstract class AbstractOfficeTool {
         this.warrantyInDays = warrantyInDays;
     }
     public String getHeaders() {
-        return "producer" + "," + "priceInUAH" + "," + "brand" + "," + "colour" + "," + "weightInGrams" + "," + "warrantyInDays";
+        return headers;
     }
 
     public String toCSV() {

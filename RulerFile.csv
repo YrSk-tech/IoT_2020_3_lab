@@ -1,0 +1,4 @@
+AbstractOfficeTool [producer=Ukraine, priceInUAH=130.0, brand=LEVENHUK, colour=BLACK, weightInGrams=55, warrantyInDays=61],lengthInCm=50
+AbstractOfficeTool [producer=Poland, priceInUAH=80.0, brand=BUROMAX, colour=WHITE, weightInGrams=120, warrantyInDays=31],lengthInCm=30
+AbstractOfficeTool [producer=China, priceInUAH=150.0, brand=REXEL_JOY, colour=GREEN, weightInGrams=200, warrantyInDays=0],lengthInCm=100
+AbstractOfficeTool [producer=Germany, priceInUAH=110.0, brand=AXENT, colour=BLUE, weightInGrams=150, warrantyInDays=30],lengthInCm=60

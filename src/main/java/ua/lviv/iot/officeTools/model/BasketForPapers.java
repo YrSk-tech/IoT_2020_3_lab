@@ -19,6 +19,11 @@ public class BasketForPapers extends AbstractOfficeTool {
     public String getHeaders() {
         return super.getHeaders() + "," + "volumeInLiter";
     }
+    
+    @Override
+    public String toCSV() {
+        return super.toCSV() + "," + "volumeInLiter=" + getVolumeInLiter();
+    }
 
     public int getVolumeInLiter() {
         return volumeInLiter;

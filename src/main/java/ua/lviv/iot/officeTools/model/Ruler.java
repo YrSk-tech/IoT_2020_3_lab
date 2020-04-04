@@ -20,6 +20,11 @@ public class Ruler extends AbstractOfficeTool {
         return super.getHeaders() + "," + "lengthInCm";
     }
     
+    @Override
+    public String toCSV() {
+        return super.toCSV() + "," + "lengthInCm=" + getLengthInCm();
+    }
+    
     public int getLengthInCm() {
         return lengthInCm;
     }
