@@ -10,7 +10,7 @@ import ua.lviv.iot.officeTools.model.Brand;
 import ua.lviv.iot.officeTools.model.Colour;
 import ua.lviv.iot.officeTools.model.Ruler;
 
-public abstract class BaseOfficeToolsManagerTest {
+public abstract class BaseOfficeToolsManagerTest  {
 
 	protected List<AbstractOfficeTool> ruler;
 

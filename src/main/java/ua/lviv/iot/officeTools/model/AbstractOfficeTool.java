@@ -1,71 +1,83 @@
 package ua.lviv.iot.officeTools.model;
 
 public abstract class AbstractOfficeTool {
-	private String producer;
+    private String producer;
 
-	private double priceInUAH;
-	private Brand brand;
-	private Colour colour;
-	private int weightInGrams;
-	private int warrantyInDays;
-	
-	public AbstractOfficeTool(String producer, double priceInUAH, Brand brand, Colour colour, int weightInGrams,
-			int warrantyInDays) {
-		super();
-		this.producer = producer;
-		this.priceInUAH = priceInUAH;
-		this.brand = brand;
-		this.colour = colour;
-		this.weightInGrams = weightInGrams;
-		this.warrantyInDays = warrantyInDays;
-	}
-	
+    private double priceInUAH;
+    private Brand brand;
+    private Colour colour;
+    private int weightInGrams;
+    private int warrantyInDays;
+    
 
-	public String getProducer() {
-		return producer;
-	}
+    public AbstractOfficeTool(String producer, double priceInUAH, Brand brand, Colour colour, int weightInGrams,
+            int warrantyInDays) {
+        super();
+        this.producer = producer;
+        this.priceInUAH = priceInUAH;
+        this.brand = brand;
+        this.colour = colour;
+        this.weightInGrams = weightInGrams;
+        this.warrantyInDays = warrantyInDays;
+    }
 
-	public void setProducer(String producer) {
-		this.producer = producer;
-	}
+    public String getProducer() {
+        return producer;
+    }
 
-	public double getPriceInUAH() {
-		return priceInUAH;
-	}
+    public void setProducer(String producer) {
+        this.producer = producer;
+    }
 
-	public void setPriceInUAH(double priceInUAH) {
-		this.priceInUAH = priceInUAH;
-	}
+    public double getPriceInUAH() {
+        return priceInUAH;
+    }
 
-	public Brand getBrand() {
-		return brand;
-	}
+    public void setPriceInUAH(double priceInUAH) {
+        this.priceInUAH = priceInUAH;
+    }
 
-	public void setBrand(Brand brand) {
-		this.brand = brand;
-	}
+    public Brand getBrand() {
+        return brand;
+    }
 
-	public Colour getColour() {
-		return colour;
-	}
+    public void setBrand(Brand brand) {
+        this.brand = brand;
+    }
 
-	public void setColour(Colour colour) {
-		this.colour = colour;
-	}
+    public Colour getColour() {
+        return colour;
+    }
 
-	public int getWeightInGrams() {
-		return weightInGrams;
-	}
+    public void setColour(Colour colour) {
+        this.colour = colour;
+    }
 
-	public void setWeightInGrams(int weightInGrams) {
-		this.weightInGrams = weightInGrams;
-	}
+    public int getWeightInGrams() {
+        return weightInGrams;
+    }
 
-	public int getWarrantyInDays() {
-		return warrantyInDays;
-	}
+    public void setWeightInGrams(int weightInGrams) {
+        this.weightInGrams = weightInGrams;
+    }
 
-	public void setWarrantyInDays(int warrantyInDays) {
-		this.warrantyInDays = warrantyInDays;
-	}
+    public int getWarrantyInDays() {
+        return warrantyInDays;
+    }
+
+    public void setWarrantyInDays(int warrantyInDays) {
+        this.warrantyInDays = warrantyInDays;
+    }
+    public String getHeaders() {
+        return "producer" + "," + "priceInUAH" + "," + "brand" + "," + "colour" + "," + "weightInGrams" + "," + "warrantyInDays";
+    }
+
+    public String toCSV() {
+        
+        return "AbstractOfficeTool [producer=" + getProducer() + ", priceInUAH=" + getPriceInUAH() + ", brand=" + getBrand()
+                + ", colour=" + getColour() + ", weightInGrams=" + getWeightInGrams() + ", warrantyInDays=" + getWarrantyInDays()
+                + "]";
+    }
+
+    
 }
