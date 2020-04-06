@@ -8,55 +8,56 @@ import ua.lviv.iot.officeTools.model.SortType;
 
 public class OfficeToolsManagerUtils {
 
-	private static final RulerSorterByWeightInGrams OFFICE_TOOL_BY_WEIGHT_IN_GRAMS_SORTER = new RulerSorterByWeightInGrams();
+    private static final RulerSorterByProducerComparator RULER_SORTER_BY_PRODUCER_COMPARATOR = new OfficeToolsManagerUtils().new RulerSorterByProducerComparator();
+    private static final RulerSorterByWeightInGrams OFFICE_TOOL_BY_WEIGHT_IN_GRAMS_SORTER = new RulerSorterByWeightInGrams();
 
-	public static void sortByWeightInGrams(final List<AbstractOfficeTool> officeTool, SortType sortType) {
-		officeTool.sort(sortType == SortType.ASCENDING ? OFFICE_TOOL_BY_WEIGHT_IN_GRAMS_SORTER
-				: OFFICE_TOOL_BY_WEIGHT_IN_GRAMS_SORTER.reversed());
-	}
+    public static void sortByWeightInGrams(final List<AbstractOfficeTool> officeTool, final SortType sortType) {
+        officeTool.sort(sortType == SortType.ASCENDING ? OFFICE_TOOL_BY_WEIGHT_IN_GRAMS_SORTER
+                : OFFICE_TOOL_BY_WEIGHT_IN_GRAMS_SORTER.reversed());
+    }
 
-	public static class RulerSorterByWeightInGrams implements Comparator<AbstractOfficeTool> {
+    public static class RulerSorterByWeightInGrams implements Comparator<AbstractOfficeTool> {
 
-		@Override
-		public int compare(AbstractOfficeTool firstRuler, AbstractOfficeTool SecondRuler) {
-			return firstRuler.getWeightInGrams() - SecondRuler.getWeightInGrams();
-		}
-	}
+        @Override
+        public int compare(AbstractOfficeTool firstRuler, AbstractOfficeTool SecondRuler) {
+            return firstRuler.getWeightInGrams() - SecondRuler.getWeightInGrams();
+        }
+    }
 
-	public static void sortByProducer(final List<AbstractOfficeTool> officeTool, final SortType sortType) {
-		officeTool.sort(sortType == SortType.ASCENDING ? new OfficeToolsManagerUtils().new RulerSorterByProducerComparator()
-				: new OfficeToolsManagerUtils().new RulerSorterByProducerComparator().reversed());
+    public static void sortByProducer(final List<AbstractOfficeTool> officeTool, final SortType sortType) {
+        officeTool.sort(sortType == SortType.ASCENDING ? RULER_SORTER_BY_PRODUCER_COMPARATOR
+                : RULER_SORTER_BY_PRODUCER_COMPARATOR.reversed());
 
-	}
+    }
 
-	public class RulerSorterByProducerComparator implements Comparator<AbstractOfficeTool> {
-		@Override
-		public int compare(AbstractOfficeTool firstRuler, AbstractOfficeTool SecondRuler) {
-			return firstRuler.getProducer().compareTo(SecondRuler.getProducer());
-		}
-	}
+    public class RulerSorterByProducerComparator implements Comparator<AbstractOfficeTool> {
+        @Override
+        public int compare(AbstractOfficeTool firstRuler, AbstractOfficeTool SecondRuler) {
+            return firstRuler.getProducer().compareTo(SecondRuler.getProducer());
+        }
+    }
 
-	public static void sortByWeightInGramsUsingLambda(final List<AbstractOfficeTool> officeTool,
-			final SortType sortType) {
-		if (sortType == SortType.ASCENDING) {
-			officeTool.sort((firstRuler, secondRuler) -> Double.compare(firstRuler.getWeightInGrams(),
-					secondRuler.getWeightInGrams()));
-		}
+    public static void sortByWeightInGramsUsingLambda(final List<AbstractOfficeTool> officeTool,
+            final SortType sortType) {
+        if (sortType == SortType.ASCENDING) {
+            officeTool.sort((firstRuler, secondRuler) -> Double.compare(firstRuler.getWeightInGrams(),
+                    secondRuler.getWeightInGrams()));
+        }
 
-		else {
-			officeTool.sort((firstRuler, secondRuler) -> Double.compare(secondRuler.getWeightInGrams(),
-					firstRuler.getWeightInGrams()));
-		}
-	}
+        else {
+            officeTool.sort((firstRuler, secondRuler) -> Double.compare(secondRuler.getWeightInGrams(),
+                    firstRuler.getWeightInGrams()));
+        }
+    }
 
-	public static void sortByProducerUsingAnonymClass(List<AbstractOfficeTool> officeTool, SortType sortType) {
-		Comparator<AbstractOfficeTool> rulerSorterByProducer = new Comparator<AbstractOfficeTool>() {
-			@Override
-			public int compare(AbstractOfficeTool firstRuler, AbstractOfficeTool secondRuler) {
-				return firstRuler.getProducer().compareTo(secondRuler.getProducer());
-			}
-		};
-		officeTool.sort(sortType == SortType.ASCENDING ? rulerSorterByProducer : rulerSorterByProducer.reversed());
-	}
+    public static void sortByProducerUsingAnonymClass(List<AbstractOfficeTool> officeTool, SortType sortType) {
+        Comparator<AbstractOfficeTool> rulerSorterByProducer = new Comparator<AbstractOfficeTool>() {
+            @Override
+            public int compare(AbstractOfficeTool firstRuler, AbstractOfficeTool secondRuler) {
+                return firstRuler.getProducer().compareTo(secondRuler.getProducer());
+            }
+        };
+        officeTool.sort(sortType == SortType.ASCENDING ? rulerSorterByProducer : rulerSorterByProducer.reversed());
+    }
 
 }
