@@ -1,6 +1,6 @@
 package ua.lviv.iot.officeTools.model;
 
-public class BasketForPapers extends AbstractOfficeTool {
+public class BasketForPapers extends OfficeTool {
 
     private int volumeInLiter;
 

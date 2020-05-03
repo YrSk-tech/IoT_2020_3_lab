@@ -5,14 +5,14 @@ import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 
-import ua.lviv.iot.officeTools.model.AbstractOfficeTool;
+import ua.lviv.iot.officeTools.model.OfficeTool;
 import ua.lviv.iot.officeTools.model.Brand;
 import ua.lviv.iot.officeTools.model.Colour;
 import ua.lviv.iot.officeTools.model.Ruler;
 
 public abstract class BaseOfficeToolsManagerTest  {
 
-	protected List<AbstractOfficeTool> ruler;
+	protected List<OfficeTool> ruler;
 
 	@BeforeEach
 	public void createRulers() {

@@ -3,14 +3,14 @@ package ua.lviv.iot.officeTools.manager;
 import java.util.ArrayList;
 import java.util.List;
 
-import ua.lviv.iot.officeTools.model.AbstractOfficeTool;
+import ua.lviv.iot.officeTools.model.OfficeTool;
 import ua.lviv.iot.officeTools.model.Colour;
 
 public class OfficeToolsManager {
-    public static List<AbstractOfficeTool> findByColour(List<AbstractOfficeTool> officeTool, Colour colours) {
-        List<AbstractOfficeTool> ruler = new ArrayList<>();
+    public static List<OfficeTool> findByColour(List<OfficeTool> officeTool, Colour colours) {
+        List<OfficeTool> ruler = new ArrayList<>();
 
-        for (AbstractOfficeTool tool : officeTool) {
+        for (OfficeTool tool : officeTool) {
             if (tool.getColour() == colours) {
                 ruler.add(tool);
             }

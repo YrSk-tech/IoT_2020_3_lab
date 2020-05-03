@@ -1,6 +1,6 @@
 package ua.lviv.iot.officeTools.model;
 
-public class MagnifyingGlass extends AbstractOfficeTool {
+public class MagnifyingGlass extends OfficeTool {
 
     private int magnificationFactor;
 
