@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.List;
 
-import ua.lviv.iot.officeTools.model.AbstractOfficeTool;
+import ua.lviv.iot.officeTools.model.OfficeTool;
 
 public class OfficeToolWriter {
     public Writer csvWriter;
@@ -13,14 +13,20 @@ public class OfficeToolWriter {
         this.csvWriter = csvWriter;
     }
     
-    public void writeIntoFile(List<AbstractOfficeTool> officeTools)  throws IOException {
+    public void writeIntoFile(List<OfficeTool> officeTools)  throws IOException {
         String informationToWrite;
-        for (AbstractOfficeTool tool : officeTools) {
+        csvWriter.write(getHeaders() + "\r\n");
+        for (OfficeTool tool : officeTools) {
             informationToWrite = tool.toCSV() + "\r\n";
             csvWriter.write(informationToWrite);
         }
     }
+    
     public String toString() {
        return csvWriter.toString();
-    }    
+    }  
+    
+    public String getHeaders() {
+        return  "producer, priceInUAH, brand, colour, weightInGrams, warrantyInDays";
+    }
 }

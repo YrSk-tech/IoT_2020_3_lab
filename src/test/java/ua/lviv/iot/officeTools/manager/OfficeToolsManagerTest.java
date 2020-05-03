@@ -8,11 +8,11 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ua.lviv.iot.officeTools.model.AbstractOfficeTool;
+import ua.lviv.iot.officeTools.model.OfficeTool;
 import ua.lviv.iot.officeTools.model.Colour;
 
 class OfficeToolsManagerTest extends BaseOfficeToolsManagerTest {
-	List<AbstractOfficeTool> findRuler;
+	List<OfficeTool> findRuler;
 
 	@BeforeEach
 	public void setUp() {

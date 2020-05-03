@@ -1,6 +1,6 @@
 package ua.lviv.iot.officeTools.model;
 
-public class Ruler extends AbstractOfficeTool {
+public class Ruler extends OfficeTool {
 
     private int lengthInCm;
 
